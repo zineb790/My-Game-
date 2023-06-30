@@ -1,6 +1,6 @@
 //grabbing my h1 elements 
 const playerText = document.querySelector("#playerText");
-const compuetrText = document.querySelector("#computerText");
+const computerText = document.querySelector("#computerText");
 const resultText = document.querySelector("#resultText");
 const choiceBtns = document.querySelectorAll(".choiceBtn");
 //setting my variables
@@ -14,6 +14,8 @@ let result;
 choiceBtns.forEach(button => addEventListener("click", () => {
     player = button.textContent;
     computerTurn();
+    playerText.textContent = `Player: ${player}`;
+     computerText.textContent=`Computer: ${computer}`;
 }));
 function computerTurn() {
     const randNum = Math.floor(Math.random() * 3) + 1;
