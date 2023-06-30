@@ -1,0 +1,9 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-transform: capitalize;
+}
+body{
+background: #444;
+color: aliceblue;
+}
