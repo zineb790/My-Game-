@@ -3,6 +3,7 @@
     margin: 0;
     text-transform: capitalize;
     line-height: 1.5;
+    box-sizing: border-box;
 }
 body{
 background:url(./pictures/rock-paper-scissors-hand-game.jpg);
@@ -10,20 +11,23 @@ background-size:cover;
 font-family: Arial, Helvetica, sans-serif;
 }
 .choiceBtn{
-   line-height: 40px; 
-   width: 100px;
+   height: 40px; 
+   width: 150px;
+   margin: 5px;
 }
 .choiceBtn:hover{
     background-color:rgb(11, 189, 189);
     color: white;
+    font-size: 1rem;
+    
 }
 #gameDiv{
-border: 3px solid ;
+border: 3px solid teal ;
 border-radius: 25px;
 padding: 10px;
 text-align: center;
 background-color: rgba(14, 175, 233, 0.457);
-width: 60%;
+width: 70%;
 margin: auto;
 top: 100px;
 position: relative;
@@ -33,5 +37,17 @@ position: relative;
     color:blue;
 }
 #computerText{
-    color: red;
+    color: rgb(178, 6, 6);
+}
+@media (max-width:600px){
+   #gameDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+   .choiceBtn{
+    margin: 5px;
+   }
+
 }
