@@ -11,7 +11,7 @@ let computer;
 // to display who won
 let result;
 //iterating over choice buttons using foreach loop
-choiceBtns.forEach(button => addEventListener("click", () => {
+choiceBtns.forEach(button =>button.addEventListener("click", () => {
     player = button.textContent;
     computerTurn();
     playerText.textContent = `Player: ${player}`;
@@ -27,7 +27,7 @@ function computerTurn() {
         case 2:
             computer = "PAPER ";
             break;
-        case 1:
+        case 3 :
             computer = "SCISSORS";
             break;
     }
@@ -37,11 +37,11 @@ function checkWinner() {
     if (player == computer) {
     return "Draw!";
 }else if (computer == "ROCK") {
-    return (player == "PAPER")?"you win!" :"you lose!"
+    return (player == "PAPER")?"you win!" : "you lose!"
 }else if (computer == "PAPER") {
-    return (player == "SCISSORS")?"you win!" :"you lose!"
-}else if (computer == "PAPER") {
-    return (player == "SCISSORS")?"you win!" :"you lose!"
+    return (player == "SCISSORS")?"you win!" : "you lose!"
+}else if (computer == "SCISSORS") {
+    return (player == "ROCK")?"you win!" :"you lose!"
 }
 
 }
