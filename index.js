@@ -1,26 +1,24 @@
-//grabbing my h1 elements 
-const playerText = document.querySelector("#playerText");
-const computerText = document.querySelector("#computerText");
-const resultText = document.querySelector("#resultText");
-const choiceBtns = document.querySelectorAll(".choiceBtn");
-//setting my variables
-//to store the player choice 
+//getting our h2 elements 
+const playerContent = document.querySelector("#playerContent");
+const computerContent = document.querySelector("#computerContent");
+const resultContent = document.querySelector("#resultContent");
+const selectedBtns = document.querySelectorAll(".selectedBtn");
+//setting variables 
 let player;
-//to store the computer random choice
 let computer;
-// to display who won
 let result;
-//iterating over choice buttons using foreach loop
-choiceBtns.forEach(button =>button.addEventListener("click", () => {
+//using forEach loop to iternate over our buttons
+selectedBtns.forEach(button =>button.addEventListener("click", () => {
     player = button.textContent;
-    computerTurn();
-    playerText.textContent = `Player: ${player}`;
-    computerText.textContent = `Computer: ${computer}`;
-    resultText.textContent = checkWinner();
+     computerRandomChoice();
+    playerContent.textContent = `Player: ${player}`;
+    computerContent.textContent = `Computer: ${computer}`;
+    resultContent.textContent = getWinner();
 }));
-function computerTurn() {
-    const randNum = Math.floor(Math.random() * 3) + 1;
-    switch (randNum) {
+//defining a function for the computer radom selection
+function computerRandomChoice() {
+    const randomNumber = Math.floor(Math.random() * 3) + 1;
+    switch (randomNumber) {
         case 1:
             computer = "ROCK";
             break;
@@ -32,8 +30,8 @@ function computerTurn() {
             break;
     }
 }
-
-function checkWinner() {
+//defining a function to check the selected option and display result
+function getWinner() {
     if (player == computer) {
     return "Draw!";
 }else if (computer == "ROCK") {
